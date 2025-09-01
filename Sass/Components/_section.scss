@@ -1,0 +1,320 @@
+.flyer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 83vh;
+  position: relative;
+
+  .flyer-items {
+    text-align: start;
+    margin-top: 2rem;
+    flex: 1;
+
+    .UI {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: bold;
+      font-size: 7rem;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: $violet;
+        border-radius: 50%;
+        margin-left: 5px;
+      }
+    }
+
+    .begginers {
+      text-transform: uppercase;
+      font-family: "Myriad Pro", sans-serif, monospace;
+      font-weight: 500;
+      writing-mode: sideways-lr;
+      font-size: 30px;
+      letter-spacing: 5px;
+
+      .s {
+        font-size: 25px;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .pro-designer {
+    position: absolute;
+    top: 17rem;
+    left: 8rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    opacity: .6;
+
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      background: white;
+    }
+  }
+
+  .flyer-img {
+    @include bg-img(null, 'Assests/img/ova.png', center center, auto, no-repeat) ;
+    height: auto;
+    padding: 0 60px;
+
+    img {
+      position: relative;
+      height: 83vh;
+    }
+  }
+
+  .flyer-containt {
+    flex: 1;
+    text-align: start;
+    margin-left: 4rem;
+
+    .edition {
+      font-family: 'Courier New', Courier, monospace;
+      border: 1px solid white;
+      padding: 15px 25px;
+      font-weight: normal;
+      justify-self: end;
+      text-align: center;
+      line-height: 1.5rem;
+      margin-bottom: 7rem;
+    }
+
+    .containt-title {
+      text-transform: uppercase;
+      font-family: 'Myriad Pro', serif;
+      font-weight: normal;
+      opacity: .7;
+      font-size: 1.6rem;
+    }
+
+    p {
+      opacity: .6;
+      line-height: 1.4em;
+      margin-top: 1.6vh;
+    }
+
+  }
+}
+
+@include breakpoint(tablet) {
+  .flyer {
+    height: 65vh;
+  }
+  .flyer-img {
+    display: none;
+  }
+  .edition {
+    justify-self: center;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .flyer .flyer-containt .containt-title, .flyer .flyer-containt .flyer-btn, .flyer .flyer-containt p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@include breakpoint(mobile) {
+  .containt-title, .flyer-btn, .flyer-containt p {
+    justify-content: center;
+    text-align: center;
+  }
+  .flyer-items {
+    display: none;
+  }
+  .flyer .flyer-containt {
+    margin-left: 0;
+  }
+}
+
+
+.freecard {
+  @include flex(space-between, center, wrap, row);
+  width: 100%;
+
+  .freecard-containt {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 5px;
+    flex-grow: 1;
+    justify-content: center;
+
+    .number {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 2.5rem;
+      margin: 0 10px;
+
+      span {
+        color: $violet;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+
+    .freecard-title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      font-family: "Myriad Pro", sans-serif;
+
+      span {
+        font-weight: bold;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.new-challenge {
+  @include bg-img(null, 'Assests/img/oval.png', center center, auto, no-repeat) ;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70vh;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  padding: 10px;
+
+  span {
+    font-weight: normal;
+    font-size: 4rem;
+  }
+}
+
+.find {
+  margin: 20px 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+
+  span {
+    font-weight: normal;
+    opacity: .6;
+    font-size: 2rem;
+  }
+}
+
+.whyUs {
+  @include grid(2, 5vw);
+  margin-top: 10vh;
+  justify-items: center;
+  align-items: center;
+
+  .imgUs {
+    background-image: url('Assests/img/ova.png'), url('Assests/img/Oval .png');
+    background-position: center center, center center;
+    background-size: auto, contain;
+    background-repeat: no-repeat, no-repeat;
+    height: auto;
+    padding: 0 100px;
+
+    img {
+      position: relative;
+      top: 10vh;
+      left: 3.8vw;
+    }
+  }
+
+  .whyUs-containt {
+    .whyUs-title {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+
+      span {
+        color: $violet;
+        font-family: "Myriad Pro", sans-serif;
+        font-weight: normal;
+      }
+    }
+
+    p {
+      opacity: .6;
+      line-height: 20px;
+    }
+
+    .whyUs-btn {
+      @include btn(white, $violet, 10px);
+      width: 50%;
+      margin-top: 15px;
+    }
+  }
+}
+
+@include breakpoint(tablet) {
+  .imgUs {
+    display: none;
+  }
+  .whyUs {
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.user {
+  width: 100%;
+  margin-top: 18vh;
+
+  .whatUser {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 60px;
+    margin-bottom: 8vh;
+
+    span {
+      color: $violet;
+      font-size: 3.2rem;
+      font-family: "Myriad Pro", sans-serif;
+    }
+  }
+
+  .user-containt {
+    @include flex(space-between, center, wrap, row);
+
+    .userProfil {
+      text-align: center;
+      padding: 10px 30px;
+      flex: 1;
+      margin-top: 5vh;
+
+      .nameUser {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 5px;
+
+        &:after {
+          display: block;
+          font-family: "Font Awesome 5 Free", sans-serif;
+          font-weight: bold;
+          margin-top: 8px;
+          margin-bottom: 15px;
+          letter-spacing: 5px;
+          color: $violet;
+          font-size: 15px;
+          content: repeat-star(5);
+        }
+      }
+
+      p {
+        opacity: .6;
+        line-height: 22px;
+        text-align: center;
+      }
+    }
+  }
+}

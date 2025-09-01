@@ -1,0 +1,7 @@
+@function repeat-star($count) {
+  $star: "";
+  @for $i from 1 through $count {
+    $star: $star + "\f005";
+  }
+  @return $star
+}

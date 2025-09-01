@@ -1,0 +1,85 @@
+@mixin flex($justify: center,$align: center,$wrap: nowrap,$direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin breakpoint($size) {
+  @if $size == mobile {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media screen and (max-width: 1100px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media screen and (min-width: 1101px) {
+      @content;
+    }
+  }
+}
+
+@mixin border($taille: 1px ,$type: solid,$color: black,$radius: 20px) {
+  border: $taille $type $color;
+  border-radius: $radius;
+  padding: 10px;
+}
+
+@mixin grid($column: 2,$gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: $gap;
+}
+
+@mixin center-absolute() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin bg-img($gardient: null,$images: null,$position: center center,$size: cover,$repeat: no-repeat) {
+  $bg-layers: ();
+  @if $gardient != null {
+    $bg-layers: append($bg-layers, $gardient)
+  }
+  $bg-layers: append($bg-layers, url(#{$images}));
+  background-image: $bg-layers;
+  background-position: $position;
+  background-size: $size;
+  background-repeat: $repeat;
+}
+
+@mixin btn($color: white,$bg: black,$padding: 10px) {
+  background-color: $bg;
+  padding: $padding;
+  color: $color;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: background-color 0.5s ease-in-out;
+  width: 100%;
+}
+
+@mixin transition($what: all, $time: 0.4s, $how: ease) {
+  -webkit-transition: $what $time $how;
+  -moz-transition: $what $time $how;
+  -ms-transition: $what $time $how;
+  -o-transition: $what $time $how;
+  transition: $what $time $how;
+}
+
+@mixin margin-top($margin: 2rem) {
+  margin-top: $margin;
+}
+
+@mixin pt-to-px($pt) {
+  font-size: ($pt * 1.333) + px;
+}
+
+
+
+

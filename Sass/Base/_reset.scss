@@ -1,0 +1,28 @@
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 90vw;
+  height: auto;
+  margin: auto;
+}
+
+
+.img, .video {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+body, html {
+  font-size: 1rem;
+  background-color: $bg;
+  color: white;
+}

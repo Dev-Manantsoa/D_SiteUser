@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 110px;
+
+  .flex {
+    @include flex(space-between, center, nowrap);
+    width: 100%;
+
+    .logo {
+      display: flex;
+
+      h3 {
+        font-size: 1.9rem;
+        font-weight: bold;
+        margin-left: 10px;
+        font-family: "Myriad Pro", serif;
+      }
+
+      &:before {
+        content: "";
+        border-left: 2px solid white;
+        border-left-width: 20px;
+        height: 1.9rem;
+      }
+    }
+
+    .nav-link {
+      @include flex(space-between, center, nowrap);
+      list-style: none;
+      gap: 30px;
+      z-index: 1000;
+
+      li {
+        text-transform: uppercase;
+        font-family: "Adobe Caslon Pro Bold", serif;
+        font-weight: bold;
+        text-align: center;
+
+        a {
+          text-decoration: none;
+          color: white;
+
+        }
+
+        &:last-child {
+          border: 3px solid $violet;
+          padding: 10px;
+          width: 120px;
+          border-radius: 20px;
+          transition: background-color 0.5s ease-in-out;
+
+        }
+
+        &:last-child:hover {
+          background-color: $violet;
+        }
+      }
+    }
+
+    .humburger {
+      display: none;
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  .container .flex .nav-link {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 90vw;
+    background-color: $violet;
+    padding: 20px;
+  }
+  .container .flex .nav-link li:last-child {
+    border: 2px solid black;
+    transition: background-color 0.5s ease-in-out;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+  .container .flex .humburger {
+    display: block;
+    cursor: pointer;
+  }
+}

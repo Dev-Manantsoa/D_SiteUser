@@ -1,0 +1,604 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 90vw;
+  height: auto;
+  margin: auto;
+}
+
+.img, .video {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+body, html {
+  font-size: 1rem;
+  background-color: #181818;
+  color: white;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 110px;
+}
+.container .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.container .flex .logo {
+  display: flex;
+}
+.container .flex .logo h3 {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-left: 10px;
+  font-family: "Myriad Pro", serif;
+}
+.container .flex .logo:before {
+  content: "";
+  border-left: 2px solid white;
+  border-left-width: 20px;
+  height: 1.9rem;
+}
+.container .flex .nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style: none;
+  gap: 30px;
+  z-index: 1000;
+}
+.container .flex .nav-link li {
+  text-transform: uppercase;
+  font-family: "Adobe Caslon Pro Bold", serif;
+  font-weight: bold;
+  text-align: center;
+}
+.container .flex .nav-link li a {
+  text-decoration: none;
+  color: white;
+}
+.container .flex .nav-link li:last-child {
+  border: 3px solid #a460f9;
+  padding: 10px;
+  width: 120px;
+  border-radius: 20px;
+  transition: background-color 0.5s ease-in-out;
+}
+.container .flex .nav-link li:last-child:hover {
+  background-color: #a460f9;
+}
+.container .flex .humburger {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .container .flex .nav-link {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 90vw;
+    background-color: #a460f9;
+    padding: 20px;
+  }
+  .container .flex .nav-link li:last-child {
+    border: 2px solid black;
+    transition: background-color 0.5s ease-in-out;
+  }
+  .container .flex .nav-link li:last-child:hover {
+    background-color: black;
+  }
+  .container .flex .humburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  padding: 30px 0;
+  height: auto;
+  margin-top: 10vh;
+  background-color: #a460f9;
+}
+.info .about {
+  margin-left: 5vw;
+}
+.info .about h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+.info .about h4:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: white;
+}
+.info .about ul {
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: "Myriad Pro", sans-serif;
+  font-weight: 200;
+}
+.info .about ul li {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.info .about ul li a {
+  color: white;
+  text-decoration: none;
+}
+.info .weDo {
+  margin-left: 10vw;
+  flex: 1;
+}
+.info .weDo h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+.info .weDo h4:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: white;
+}
+.info .weDo ul {
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: "Myriad Pro", sans-serif;
+  font-weight: 200;
+}
+.info .weDo ul li {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.info .weDo ul li a {
+  color: white;
+  text-decoration: none;
+}
+.info .sign {
+  margin-right: 5vw;
+  flex: 1;
+  text-align: end;
+  padding: 20px;
+}
+.info .sign h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.info .sign h3:after {
+  content: "";
+  display: block;
+  border: 2px solid white;
+  height: 40px;
+  width: 15rem;
+  justify-self: end;
+  margin: 25px 0;
+}
+.info .sign .social {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+}
+.info .sign .social i {
+  cursor: pointer;
+}
+.info .sign .social h6 {
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .sign {
+    display: block;
+    justify-items: center;
+    width: 100%;
+  }
+}
+.flyer-btn {
+  margin-top: 6vh;
+}
+.flyer-btn .btn1 {
+  margin-right: 25px;
+  background-color: #a460f9;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}
+.flyer-btn .btn2 {
+  cursor: pointer;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #181818;
+  border: none;
+}
+
+.card-find {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2vw;
+}
+.card-find .card-containt {
+  text-align: center;
+  border: 1px solid white;
+  padding: 50px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.card-find .card-containt .card-title {
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 2rem;
+}
+.card-find .card-containt .card-title:after {
+  content: "";
+  display: block;
+  width: 25%;
+  height: 3px;
+  margin: auto;
+  background: #a460f9;
+}
+.card-find .card-containt .card-title span {
+  color: #a460f9;
+}
+.card-find .card-containt .card-p {
+  margin-top: 20px;
+  opacity: 0.7;
+  line-height: 25px;
+}
+.card-find .card-containt .card-btn {
+  background-color: #a460f9;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: background-color 0.5s ease-in-out;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.flyer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 83vh;
+  position: relative;
+}
+.flyer .flyer-items {
+  text-align: start;
+  margin-top: 2rem;
+  flex: 1;
+}
+.flyer .flyer-items .UI {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 7rem;
+}
+.flyer .flyer-items .UI:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #a460f9;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.flyer .flyer-items .begginers {
+  text-transform: uppercase;
+  font-family: "Myriad Pro", sans-serif, monospace;
+  font-weight: 500;
+  writing-mode: sideways-lr;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+.flyer .flyer-items .begginers .s {
+  font-size: 25px;
+  font-weight: 800;
+}
+.flyer .pro-designer {
+  position: absolute;
+  top: 17rem;
+  left: 8rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  opacity: 0.6;
+}
+.flyer .pro-designer:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  background: white;
+}
+.flyer .flyer-img {
+  background-image: url(Assests/img/ova.png);
+  background-position: center center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 0 60px;
+}
+.flyer .flyer-img img {
+  position: relative;
+  height: 83vh;
+}
+.flyer .flyer-containt {
+  flex: 1;
+  text-align: start;
+  margin-left: 4rem;
+}
+.flyer .flyer-containt .edition {
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid white;
+  padding: 15px 25px;
+  font-weight: normal;
+  justify-self: end;
+  text-align: center;
+  line-height: 1.5rem;
+  margin-bottom: 7rem;
+}
+.flyer .flyer-containt .containt-title {
+  text-transform: uppercase;
+  font-family: "Myriad Pro", serif;
+  font-weight: normal;
+  opacity: 0.7;
+  font-size: 1.6rem;
+}
+.flyer .flyer-containt p {
+  opacity: 0.6;
+  line-height: 1.4em;
+  margin-top: 1.6vh;
+}
+
+@media screen and (max-width: 1100px) {
+  .flyer {
+    height: 65vh;
+  }
+  .flyer-img {
+    display: none;
+  }
+  .edition {
+    justify-self: center;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .flyer .flyer-containt .containt-title, .flyer .flyer-containt .flyer-btn, .flyer .flyer-containt p {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .containt-title, .flyer-btn, .flyer-containt p {
+    justify-content: center;
+    text-align: center;
+  }
+  .flyer-items {
+    display: none;
+  }
+  .flyer .flyer-containt {
+    margin-left: 0;
+  }
+}
+.freecard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.freecard .freecard-containt {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 5px;
+  flex-grow: 1;
+  justify-content: center;
+}
+.freecard .freecard-containt .number {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  margin: 0 10px;
+}
+.freecard .freecard-containt .number span {
+  color: #a460f9;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.freecard .freecard-containt .freecard-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: "Myriad Pro", sans-serif;
+}
+.freecard .freecard-containt .freecard-title span {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.new-challenge {
+  background-image: url(Assests/img/oval.png);
+  background-position: center center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70vh;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  padding: 10px;
+}
+.new-challenge span {
+  font-weight: normal;
+  font-size: 4rem;
+}
+
+.find {
+  margin: 20px 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.find span {
+  font-weight: normal;
+  opacity: 0.6;
+  font-size: 2rem;
+}
+
+.whyUs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5vw;
+  margin-top: 10vh;
+  justify-items: center;
+  align-items: center;
+}
+.whyUs .imgUs {
+  background-image: url("Assests/img/ova.png"), url("Assests/img/Oval .png");
+  background-position: center center, center center;
+  background-size: auto, contain;
+  background-repeat: no-repeat, no-repeat;
+  height: auto;
+  padding: 0 100px;
+}
+.whyUs .imgUs img {
+  position: relative;
+  top: 10vh;
+  left: 3.8vw;
+}
+.whyUs .whyUs-containt .whyUs-title {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+.whyUs .whyUs-containt .whyUs-title span {
+  color: #a460f9;
+  font-family: "Myriad Pro", sans-serif;
+  font-weight: normal;
+}
+.whyUs .whyUs-containt p {
+  opacity: 0.6;
+  line-height: 20px;
+}
+.whyUs .whyUs-containt .whyUs-btn {
+  background-color: #a460f9;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: background-color 0.5s ease-in-out;
+  width: 100%;
+  width: 50%;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1100px) {
+  .imgUs {
+    display: none;
+  }
+  .whyUs {
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.user {
+  width: 100%;
+  margin-top: 18vh;
+}
+.user .whatUser {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 60px;
+  margin-bottom: 8vh;
+}
+.user .whatUser span {
+  color: #a460f9;
+  font-size: 3.2rem;
+  font-family: "Myriad Pro", sans-serif;
+}
+.user .user-containt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.user .user-containt .userProfil {
+  text-align: center;
+  padding: 10px 30px;
+  flex: 1;
+  margin-top: 5vh;
+}
+.user .user-containt .userProfil .nameUser {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 5px;
+}
+.user .user-containt .userProfil .nameUser:after {
+  display: block;
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  letter-spacing: 5px;
+  color: #a460f9;
+  font-size: 15px;
+  content: "\f005\f005\f005\f005\f005";
+}
+.user .user-containt .userProfil p {
+  opacity: 0.6;
+  line-height: 22px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
